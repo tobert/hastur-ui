@@ -36,8 +36,10 @@ http.createServer(function(request, response) {
         head["Content-Type"] = "image/jpeg";
       else if (extension == "gif")
         head["Content-Type"] = "image/gif";
+      else if (extension == "html")
+        head["Content-Type"] = "text/html";
       else
-        console.log("fail: " + extension);
+        console.log("fail: " + request.url);
 
       response.writeHead(200, head);
       response.write(file, "binary");

@@ -1,0 +1,23 @@
+{
+  "name": "hastur-ui",
+  "version": "0.0.1",
+  "description": "A generic user interface to the Hastur time-series database.",
+  "keywords": [ "timeseries", "dashboard" ],
+  "homepage": "http://github.com/tobert/hastur-ui",
+  "author": {
+    "name": "Al Tobey",
+    "url": "http://tobert.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/tobert/hastur-ui.git"
+  },
+  "main": "./lib/hastur-ui.js",
+  "dependencies": {
+    "d3": "2.9.6",
+    "jsdom": "0.2.14"
+  },
+  "scripts": {
+    "test": "./node_modules/vows/bin/vows"
+  }
+}

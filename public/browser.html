@@ -33,25 +33,27 @@
         </a>
         <a class="brand" href="#">Hastur</a>
         <div class="nav-collapse">
-          <ul class="nav">
+          <ul class="nav nav-tabs">
             <li class="active">
-               <a href="#">Home</a>
+              <a href="#home" data-toggle="tab">Home</a>
             </li>
-            <li class="active">
-               <a href="#">Browser</a>
+            <li>
+               <a href="#browser" data-toggle="tab">Browser</a>
             </li>
-            <li class="active">
-               <a href="#">Events</a>
+            <li>
+               <a href="#events" data-toggle="tab">Events</a>
             </li>
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">Dashboards <b class="caret"></b></a>
               <ul class="dropdown-menu" id="hastur-dashboard-menu">
+                <li><a href="#example" data-toggle="tab">Example</a></li>
                 <!-- append li elements here to add to the dashboard dropdown -->
               </ul>
             </li>
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">Manage <b class="caret"></b></a>
               <ul class="dropdown-menu">
+                <li><a href="#example" data-toggle="tab">Example</a></li>
               </ul>
             </li>
           </ul>
@@ -60,7 +62,12 @@
     </div>
   </div>
 
-  <div class="container-fluid">
+<div class="tab-content">
+  <div class="container-fluid tab-pane" id="home">
+    <p>No default home yet. This will be a dashboard for hastur itself.</p>
+  </div>
+
+  <div class="container-fluid tab-pane" id="browser">
     <div class="row-fluid well shorten">
       <div class="span9">
         <p id="path-info">/</p>
@@ -82,15 +89,6 @@
           <div class="tab-pane fade active in" id="nodes"></div>
           <div class="tab-pane" id="metrics"></div>
         </div>
-        <!--
-        <ul class="nav nav-list" id="node-list">
-        </ul>
-      </div>
-
-      <div class="span4 well">
-        <ul class="nav nav-list" id="name-list">
-        </ul>
-        -->
       </div>
 
       <div class="span5" id="chart-area">
@@ -102,6 +100,11 @@
       </div>
     </div>
   </div>
+
+  <div class="container tab-pane" id="events">
+    <p>coming soon</p>
+  </div>
+</div>
 
   <script src="/lib/jquery-1.7.2.min.js"></script>
   <script src="/lib/bootstrap.min.js"></script>

@@ -5,13 +5,20 @@ var port = process.argv[2] || 8888;
 var http = require("http"),
     url = require("url"),
     path = require("path"),
-    fs = require("fs");
+    fs = require("fs"),
+    exec = require('child_process').exec;
 
 http.createServer(function(request, response) {
-  var uri = url.parse(request.url).pathname
 
+  // rebuild hastur-ui.js
+  var child = exec("/usr/bin/make", function (error, stdout, stderr) { });
+
+  var uri = url.parse(request.url).pathname
+  console.log("URI: " + uri);
   if (uri == "" || uri == "/" || uri == "/browser.html")
     uri = "./public/browser.html";
+  else if (uri.match(/^\/?api\//))
+    uri = "./test" + uri;
 
   var filename = path.join(process.cwd(), uri);
 
@@ -24,7 +31,7 @@ http.createServer(function(request, response) {
       }
 
       var extension = filename.split('.').pop();
-      var head = { "Content-Type": "text/html" };
+      var head = { "Content-Type": "application/json" };
 
       if (extension == "js")
         head["Content-Type"] = "application/javascript";
@@ -38,8 +45,6 @@ http.createServer(function(request, response) {
         head["Content-Type"] = "image/gif";
       else if (extension == "html")
         head["Content-Type"] = "text/html";
-      else
-        console.log("fail: " + request.url);
 
       response.writeHead(200, head);
       response.write(file, "binary");

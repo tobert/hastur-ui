@@ -1,0 +1,111 @@
+{
+  "ffffffff-ffff-ffff-ffff-ffffffffffff": {
+    "hastur.agent.cstime": {
+
+    },
+    "hastur.agent.cutime": {
+
+    },
+    "hastur.agent.heartbeat": {
+
+    },
+    "hastur.agent.noops": {
+
+    },
+    "hastur.agent.process_heartbeat": {
+
+    },
+    "hastur.agent.stime": {
+
+    },
+    "hastur.agent.udp_packets": {
+
+    },
+    "hastur.agent.utime": {
+
+    },
+    "hastur.agent.zmq_send": {
+
+    },
+    "hastur.rest.db.query_time": {
+
+    },
+    "hastur.rest.uri": {
+
+    },
+    "linux.proc.diskstats": {
+
+    },
+    "linux.proc.loadavg": {
+
+    },
+    "linux.proc.meminfo": {
+
+    },
+    "linux.proc.net.dev": {
+
+    },
+    "linux.proc.stat": {
+
+    },
+    "linux.proc.uptime": {
+
+    }
+  },
+  "00000000-0000-0000-0000-000000000000": {
+    "hastur.agent.cstime": {
+
+    },
+    "hastur.agent.cutime": {
+
+    },
+    "hastur.agent.heartbeat": {
+
+    },
+    "hastur.agent.noops": {
+
+    },
+    "hastur.agent.process_heartbeat": {
+
+    },
+    "hastur.agent.stime": {
+
+    },
+    "hastur.agent.udp_packets": {
+
+    },
+    "hastur.agent.utime": {
+
+    },
+    "hastur.agent.zmq_send": {
+
+    },
+    "hastur.job.rollup.all.counters": {
+
+    },
+    "hastur.job.rollup.all.gauges": {
+
+    },
+    "linux.proc.diskstats": {
+
+    },
+    "linux.proc.loadavg": {
+
+    },
+    "linux.proc.meminfo": {
+
+    },
+    "linux.proc.net.dev": {
+
+    },
+    "linux.proc.stat": {
+
+    },
+    "linux.proc.uptime": {
+
+    },
+    "process_heartbeat": {
+
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "ffffffff-ffff-ffff-ffff-ffffffffffff": {
+    "hostname": "ip-10-10-100-100.ec2.internal",
+    "fqdn": "ec2-20-20-100-150.compute-1.amazonaws.com",
+    "nodename": "ip-10-10-100-100",
+    "cnames": [
+      "hastur1.us-east-1.example.com"
+    ],
+    "all": [
+      "hastur-core2.us-east-1.example.com",
+      "ip-10-10-100-100",
+      "ec2-20-20-100-150.compute-1.amazonaws.com",
+      "ip-10-10-100-100.ec2.internal"
+    ]
+  },
+  "00000000-0000-0000-0000-000000000000": {
+    "hostname": "test.example.com",
+    "fqdn": "test.example.com",
+    "nodename": "test.example.com",
+    "cnames": [
+
+    ],
+    "all": [
+      "test.example.com"
+    ]
+  }
+}

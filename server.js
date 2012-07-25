@@ -1,4 +1,10 @@
-/* borrowed from https://gist.github.com/701407 */
+/* borrowed from https://gist.github.com/701407
+ * This is a simple stub server for testing out of this repo without
+ * a Hastur retrieval service or any funny business.
+ * Usage: node server.js &
+ * http://localhost:8888/
+ */
+
 
 var port = process.argv[2] || 8888;
 

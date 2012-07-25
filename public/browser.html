@@ -63,7 +63,7 @@
   <div class="container-fluid">
     <div class="row-fluid well shorten">
       <div class="span9">
-        <p id="node-path">nodes /</p>
+        <p id="path-info">/</p>
       </div>
       <div class="span3">
         <div class="progress progress-striped active" id="load-progress-container">
@@ -74,6 +74,15 @@
 
     <div class="row-fluid">
       <div class="span3 well">
+        <ul class="nav nav-tabs">
+          <li><a href="#nodes" data-toggle="tab">Nodes</a></li>
+          <li><a href="#metrics" data-toggle="tab">Metrics</a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane fade active in" id="nodes"></div>
+          <div class="tab-pane" id="metrics"></div>
+        </div>
+        <!--
         <ul class="nav nav-list" id="node-list">
         </ul>
       </div>
@@ -81,6 +90,7 @@
       <div class="span4 well">
         <ul class="nav nav-list" id="name-list">
         </ul>
+        -->
       </div>
 
       <div class="span5" id="chart-area">

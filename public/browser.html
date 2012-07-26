@@ -10,14 +10,21 @@
   <script src="lib/modernizr-2.5.3.min.js"></script>
   <link href="lib/bootstrap.min.css" rel="stylesheet">
   <link href="lib/bootstrap-responsive.min.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
   <style>
     body {
       padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      height: 90%;
+      width: 100%;
+      position: absolute;
     }
     div.shorten {
       height: 25px;
       padding: 7px;
       margin-bottom: 10px;
+    }
+    code {
+      font-family: 'Droid Sans Mono', monospace;
     }
   </style>
 </head>
@@ -43,6 +50,9 @@
             <li>
                <a href="#events" data-toggle="tab">Events</a>
             </li>
+            <li>
+               <a href="#scratchpad" data-toggle="tab">Scratchpad</a>
+            </li>
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">Dashboards <b class="caret"></b></a>
               <ul class="dropdown-menu" id="hastur-dashboard-menu">
@@ -63,10 +73,13 @@
   </div>
 
 <div class="tab-content">
+
+  <!-- default / home tab -->
   <div class="container-fluid tab-pane" id="home">
     <p>No default home yet. This will be a dashboard for hastur itself.</p>
   </div>
 
+  <!-- data browser -->
   <div class="container-fluid tab-pane" id="browser">
     <div class="row-fluid well shorten">
       <div class="span9">
@@ -101,19 +114,67 @@
     </div>
   </div>
 
+  <!-- event timeline -->
   <div class="container tab-pane" id="events">
     <p>coming soon</p>
   </div>
+
+  <!-- query scratchpad -->
+  <div class="container-fluid tab-pane" id="scratchpad">
+    <form class="form-horizontal">
+      <fieldset>
+        <div class="row-fluid">
+          <div class="control-group span12">
+            <label class="control-label" for="url">URL</label>
+            <div class="controls">
+              <div class="span10">
+                <input type="text" class="input-xlarge" style="width: 70%;"
+                       value="/api/name/hastur.agent.noops/value" id="scratchpad-url"/>
+                <button class="btn" type="button" data-loading-text="loading ..."
+                        id="scratchpad-button">Run Query</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row-fluid">
+          <div class="control-group span12">
+
+            <ul class="nav nav-tabs">
+              <li><a href="#scratchpad-data" data-toggle="tab">Data</a></li>
+              <li><a href="#scratchpad-graph" data-toggle="tab">Graph</a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane active code" id="scratchpad-data">
+              </div>
+              <div class="tab-pane" id="scratchpad-graph">
+              </div>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
 </div>
 
-  <script src="/lib/jquery-1.7.2.min.js"></script>
-  <script src="/lib/bootstrap.min.js"></script>
-  <script src="/lib/d3.v2.min.js"></script>
-  <script src="/lib/rickshaw.min.js"></script>
-  <script src="/lib/hastur-ui.js"></script>
+  <script src="lib/jquery-1.7.2.min.js"></script>
+  <script src="lib/bootstrap.min.js"></script>
+  <script src="lib/d3.v2.min.js"></script>
+  <script src="lib/rickshaw.min.js"></script>
+  <script src="lib/hastur-ui.js"></script>
 
   <script type="text/javascript">
-    hastur.browser.init("#hastur-main-panel");
+    $(document).ready(function () {
+      hastur.browser.init("#hastur-main-panel");
+
+      $("#scratchpad-button").click(function() {
+        var url = $("#scratchpad-url").val();
+        $.get(url, { pretty: "true" }, function (data) {
+          $("#scratchpad-data").html("<pre><code>" + data + "</code></pre>");
+          // TODO: render graph
+          $(this).button("complete");
+        }, "text");
+      });
+    });
   </script>
 </body>
 </html>
